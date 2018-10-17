@@ -11,13 +11,14 @@ class AuthenticationService
     $this->password = $password;
   }
 
+  // check user existence, then match password hash.
   public function is_authenticated()
   {
     if($this->user_exists())
     {
-      echo 'authentication successful';
+      return true;
     } else {
-      echo 'authentication failed';
+      return false;
     }
 
   }
@@ -41,6 +42,10 @@ class AuthenticationService
       }
       fclose($fp);
     }
+  }
+
+  private function password_match() {
+    
   }
 }
 
