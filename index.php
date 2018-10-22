@@ -8,27 +8,11 @@
   <title>Simple Auth</title>
 </head>
 <body>
-  <div class='container'>
-    <form action="simple_auth.php" method="post">
-      <div class="form-group">
-        <label>Email</label>
-        <input
-          class="form-control"
-          type="text"
-          name="email"
-        />
-      </div>
-      <div class="form-group">
-        <label>Password</label>
-        <input
-          class="form-control"
-          type="text"
-          name="password"
-        />
-      </div>
+  <pre>
+  <? print_r($_POST) ?>
+  <br>
+  <?php include('simple_auth.php') ?>
 
-      <input type="submit">
-    </form>
-  </div>
+  This content should be locked down yo!
 </body>
 </html>

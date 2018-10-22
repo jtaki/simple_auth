@@ -1,4 +1,6 @@
 <?php
+
+define('CONFIG',require('config.php'));
 // checks to see if provided username exists, then checks for matching password hash
 class AuthenticationService
 { // refer to provided email & provided password
@@ -17,6 +19,7 @@ class AuthenticationService
     if($this->user_exists())
     {
       return true;
+      // check password
     } else {
       return false;
     }
@@ -25,12 +28,10 @@ class AuthenticationService
 
   // looks into users file and checks for existence
   private function user_exists() {
-    $file = 'users.json';
-
-    if (file_exists($file))
+    if (file_exists(CONFIG['users_file_path']))
     {
-      $fp = fopen($file, "r") or die("unable to open file");
-      $contents = fread($fp, filesize($file));
+      $fp = fopen(CONFIG['users_file_path'], "r") or die("unable to open file");
+      $contents = fread($fp, filesize(CONFIG['users_file_path']));
       $users = json_decode($contents, true)['users'];
 
       foreach($users as $user)
@@ -44,8 +45,20 @@ class AuthenticationService
     }
   }
 
-  private function password_match() {
-    
+  public function login($username, $password) {
+    if (file_exists(CONFIG['users_file_path']))
+    {
+      $fp = fopen(CONFIG['users_file_path'], "r") or die("unable to open file");
+      $contents = fread($fp, filesize(CONFIG['users_file_path']));
+      $users = json_decode($contents, true)['users'];
+
+      if($users[$username]['password'] == $this->password)
+      {
+        return true;
+      }
+
+      fclose($fp);
+    }
   }
 }
 
