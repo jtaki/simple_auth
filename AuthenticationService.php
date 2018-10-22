@@ -18,8 +18,9 @@ class AuthenticationService
   {
     if($this->user_exists())
     {
-      return true;
-      // check password
+      $key = $this->get_user_key();
+      return $this->validate_password($user_key);
+
     } else {
       return false;
     }
@@ -66,5 +67,19 @@ class AuthenticationService
       fclose($fp);
     }
   }
+
+  public function validate_password($user_key) {
+    if (file_exists(CONFIG['users_file_path']))
+    {
+      $fp = fopen(CONFIG['users_file_path'], "r") or die("unable to open file");
+      $contents = fread($fp, filesize(CONFIG['users_file_path']));
+      $users = json_decode($contents, true)['users'];
+
+      return ($users[$user_key]['password'] === $this->password) ? true : false;
+
+      fclose($fp);
+    }
+  }
+
 }
 ?>

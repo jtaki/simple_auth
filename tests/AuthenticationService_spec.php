@@ -22,4 +22,8 @@ $auth =  new AuthenticationService($email, $password);
 assert($auth->get_user_key($email) == 0);
 
 // should return true if user exists
-assert($auth->user_exists() == true);
+assert($auth->user_exists());
+
+// password provided should match password at user key
+$user_key = $auth->get_user_key();
+assert($auth->validate_password($user_key));
