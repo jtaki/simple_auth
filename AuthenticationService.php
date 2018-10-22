@@ -18,7 +18,7 @@ class AuthenticationService
   {
     if($this->user_exists())
     {
-      $key = $this->get_user_key();
+      $user_key = $this->get_user_key();
       return $this->validate_password($user_key);
 
     } else {

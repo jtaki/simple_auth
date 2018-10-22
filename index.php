@@ -8,11 +8,10 @@
   <title>Simple Auth</title>
 </head>
 <body>
-  <pre>
-  <? print_r($_POST) ?>
-  <br>
   <?php include('simple_auth.php') ?>
+  <div class="container">
+   Content to be locked down
+  </div>
 
-  This content should be locked down yo!
 </body>
 </html>

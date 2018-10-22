@@ -13,12 +13,13 @@
 
     if($auth->is_authenticated())
     {
-      echo "authentication successful";
+      echo "<div class='alert alert-primary'>Authentication successful</div>";
       // render the rest of the page
     } else {
+
       // if user session does not exist, then render login form
       // since we are locking down a page and not using sessions, just show form.
-      echo '<h2>Login Failed</h2>';
+      echo "<div class='alert alert-danger'>Authentication failed</div>";
       include('sign_in_form.php');
       exit();
     }
@@ -27,22 +28,3 @@
     include('sign_in_form.php');
     exit();
   }
-
-
-
-
-
-
-
-  // // if authentication succeeds, create session and redirect to cart page
-  // if ($auth->is_authenticated())
-  // {
-  //   header('Location: ' . $success_path );
-  //   echo '<div>
-  //           success
-  //         </div>';
-  // } else {
-  //   echo '<div>
-  //           denied
-  //         </div>';
-  // }
