@@ -4,6 +4,7 @@ return array(
   'auth_success_path' => 'success.php',
   'auth_failure_path' => 'index.php',
   'registration_path' => 'registration.php',
+  'post_registration_path' => 'success.php',
 
   'users_file_path' => 'users.json',
   
