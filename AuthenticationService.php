@@ -27,22 +27,9 @@ class AuthenticationService
   }
 
   // looks into users file and checks for existence
-  private function user_exists() {
-    if (file_exists(CONFIG['users_file_path']))
-    {
-      $fp = fopen(CONFIG['users_file_path'], "r") or die("unable to open file");
-      $contents = fread($fp, filesize(CONFIG['users_file_path']));
-      $users = json_decode($contents, true)['users'];
-
-      foreach($users as $user)
-      {
-        if($user['email'] == $this->email)
-        {
-          return true;
-        }
-      }
-      fclose($fp);
-    }
+  // should reutrn a boolean
+  public function user_exists() {
+    return (($this->get_user_key()) !== NULL) ? true : false;
   }
 
   public function login($username, $password) {
@@ -60,6 +47,24 @@ class AuthenticationService
       fclose($fp);
     }
   }
-}
 
+
+  public function get_user_key() {
+    if (file_exists(CONFIG['users_file_path']))
+    {
+      $fp = fopen(CONFIG['users_file_path'], "r") or die("unable to open file");
+      $contents = fread($fp, filesize(CONFIG['users_file_path']));
+      $users = json_decode($contents, true)['users'];
+
+      foreach($users as $key => $attributes)
+      {
+        if($attributes['email'] == $this->email)
+        {
+          return $key;
+        }
+      }
+      fclose($fp);
+    }
+  }
+}
 ?>
