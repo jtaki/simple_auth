@@ -5,33 +5,32 @@ class RegistrationService {
   private $email;
   private $password;
   private $password_confirmation;
-  private $errors = [];
+  private $errors = Array();
 
   public function __construct($email, $password, $password_confirmation)
   {
     $this->email = $email;
     $this->password = $password;
     $this->password_confirmation = $password_confirmation;
+    $this->errors = $this->registration_validation();
+  }
+
+  public function registration_validation()
+  {
+    if($this->duplicate_user())
+    { $errors[] = 'email already registered'; }
+    if(!$this->passwords_match())
+    { $errors[] = 'passwords do not match'; }
+
+    return $errors;
   }
 
   public function successful()
   {
-    if(!$this->duplicate_user())
+    if(empty($this->errors))
     {
-      if($this->passwords_match())
-      {
-        return true;
-      }
-      else
-      {
-        $errors[] = 'passwords do not match';
-      }
+      return true;
     }
-    else
-    {
-      $erorrs[] = 'email already exists';
-    }
-
   }
 
   public function duplicate_user()
@@ -59,5 +58,10 @@ class RegistrationService {
     return ($this->password === $this->password_confirmation)
     ? true
     : false;
+  }
+
+  public function get_errors()
+  {
+    return $this->errors;
   }
 }

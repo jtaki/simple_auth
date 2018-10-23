@@ -15,7 +15,7 @@
     }
     else
     {
-      echo 'FAILED';
+      print_r($registration->get_errors());
     }
   }
 
