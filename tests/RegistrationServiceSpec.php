@@ -18,3 +18,6 @@ assert(!$test);
 // assuming last 2 tests true, reg should be successful
 $test = $reg->successful();
 assert($test);
+
+// write new user to fule
+$reg->register_user();

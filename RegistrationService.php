@@ -65,4 +65,20 @@ class RegistrationService {
   {
     return $this->errors;
   }
+
+  public function register_user() {
+    $user = [
+      'email' => 'user@test.com',
+      'password' => 'asdf1234'
+    ];
+
+    if (file_exists(CONFIG['users_file_path']))
+    {
+      $contents = file_get_contents(CONFIG['users_file_path']);
+      $data = json_decode($contents, true);
+      array_push($data['users'], $user);
+      $json = json_encode($data);
+      file_put_contents(CONFIG['users_file_path'], $json);
+    }
+  }
 }
