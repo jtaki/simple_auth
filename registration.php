@@ -15,7 +15,7 @@
     }
     else
     {
-      print_r($registration->get_errors());
+      $errors = $registration->get_errors();
     }
   }
 

@@ -17,10 +17,11 @@ class RegistrationService {
 
   public function registration_validation()
   {
+    $errors = [];
     if($this->duplicate_user())
-    { $errors[] = 'email already registered'; }
+    { $errors['duplicate_user'] = 'email already registered'; }
     if(!$this->passwords_match())
-    { $errors[] = 'passwords do not match'; }
+    { $errors['password_nomatch'] = 'passwords do not match'; }
 
     return $errors;
   }
