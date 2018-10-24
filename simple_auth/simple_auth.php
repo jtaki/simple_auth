@@ -1,5 +1,5 @@
 <?php
-  require('AuthenticationService.php');
+  require('simple_auth/AuthenticationService.php');
   // authentication service will check to see if user session exists
 
  // if login form submitted
@@ -20,11 +20,11 @@
       // if user session does not exist, then render login form
       // since we are locking down a page and not using sessions, just show form.
       echo "<div class='alert alert-danger'>Authentication failed</div>";
-      include('sign_in_form.php');
+      include('simple_auth/layout/sign_in_form.php');
       exit();
     }
 
   } else { // if login form was not submitted, then render the login form
-    include('sign_in_form.php');
+    include('simple_auth/layout/sign_in_form.php');
     exit();
   }
