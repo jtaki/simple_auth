@@ -10,7 +10,8 @@
 
     if($registration->successful())
     {
-      header('Location:' . 'success.php');
+      header('Location:' . "../index.php");
+      // print_r($_POST);
     }
     else
     {
@@ -32,7 +33,7 @@
   <title>New User Registration</title>
 </head>
 <body>
-  <?php include('registration_form.php'); ?>
+  <?php include('layout/registration_form.php'); ?>
 
   <!-- <pre>
     <? print_r($_POST); ?>

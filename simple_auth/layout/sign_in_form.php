@@ -22,5 +22,5 @@
       <input type="submit" name='login-submit' value='Sign In'>
     </form>
 
-    <span><a href='registration.php'>or Register Now</a></span>
+    <span><a href='simple_auth/registration.php'>or Register Now</a></span>
   </div>

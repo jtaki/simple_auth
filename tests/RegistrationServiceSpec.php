@@ -1,5 +1,5 @@
 <?php
-include('RegistrationService.php');
+include('simple_auth/RegistrationService.php');
 
 $e = 'admin3@example.com';
 $p = 'asdf1234';

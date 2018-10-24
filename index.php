@@ -8,7 +8,7 @@
   <title>Simple Auth</title>
 </head>
 <body>
-  <?php include('simple_auth.php') ?>
+  <?php include('simple_auth/simple_auth.php') ?>
   <div class="container">
    Content to be locked down
   </div>
