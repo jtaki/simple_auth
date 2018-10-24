@@ -9,6 +9,8 @@ Sometimes you simply want to lock up a page for registered users only. The goal 
 
 
 - configuration
+- make sure users.json is writeable
+  `$ chmod -R 777 simple_auth/users.json`
 
 ## how to use
 include simple auth.php at the top of the locked page.
