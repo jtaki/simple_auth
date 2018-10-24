@@ -28,8 +28,9 @@ class RegistrationService {
 
   public function successful()
   {
-    if(empty($this->errors))
+    if(empty($this->errors) && $this->passwords_match())
     {
+      $this->register_user();
       return true;
     }
   }
@@ -68,8 +69,8 @@ class RegistrationService {
 
   public function register_user() {
     $user = [
-      'email' => 'user@test.com',
-      'password' => 'asdf1234'
+      'email' => $this->email,
+      'password' => $this->password
     ];
 
     if (file_exists(CONFIG['users_file_path']))

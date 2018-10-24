@@ -10,8 +10,7 @@
 
     if($registration->successful())
     {
-      // header('Location:' . 'success.php');
-      echo 'registration success';
+      header('Location:' . 'success.php');
     }
     else
     {
@@ -35,8 +34,8 @@
 <body>
   <?php include('registration_form.php'); ?>
 
-  <pre>
+  <!-- <pre>
     <? print_r($_POST); ?>
-  </pre>
+  </pre> -->
 </body>
 </html>
