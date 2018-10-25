@@ -1,5 +1,5 @@
 <?php
-include('AuthenticationService.php');
+include('simple_auth/AuthenticationService.php');
 
 // correct creds should return a valid auth
 $email = 'admin@example.com';
@@ -19,7 +19,7 @@ $auth =  new AuthenticationService($email, $password);
 // assert($auth->login($femail, $fpassword) == false);
 
 // should be able to get a user's key from username
-assert($auth->get_user_key($email) == 0);
+assert($auth->get_user_key() == 0);
 
 // should return true if user exists
 assert($auth->user_exists());
