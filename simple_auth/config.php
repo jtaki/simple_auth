@@ -1,10 +1,10 @@
 <?php
 
 return array(
-  'auth_success_path' => '../index.php',
+  'auth_success_path' => '../locked_page.php',
   'auth_failure_path' => '../index.php',
   'registration_path' => 'registration.php',
-  'post_registration_path' => '../index.php',
+  'post_registration_path' => '../locked_page.php',
 
   'users_file_path' => 'simple_auth/users.json',
   

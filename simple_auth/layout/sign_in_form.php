@@ -18,6 +18,12 @@
           required
         />
       </div>
+      <!-- hidden input to carry post vars from index -->
+      <?php foreach($_POST as $k => $v) {?>
+      <?php if($k === "password" || $k === "email") { continue; } ?>
+      <?= $k ?>
+        <input type="hidden" name="<?= $k ?>" value="<?= $v ?>">
+      <?php } ?>
 
       <input type="submit" name='login-submit' value='Sign In'>
     </form>

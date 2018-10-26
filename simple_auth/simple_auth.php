@@ -1,7 +1,7 @@
 <?php
   require('simple_auth/AuthenticationService.php');
+  print_r($_POST);
   // authentication service will check to see if user session exists
-
  // if login form submitted
  // pull vars
   if(isset($_POST['login-submit'])){
@@ -28,3 +28,4 @@
     include('simple_auth/layout/sign_in_form.php');
     exit();
   }
+
