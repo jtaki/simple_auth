@@ -4,7 +4,7 @@
   // authentication service will check to see if user session exists
  // if login form submitted
  // pull vars
-  if(isset($_POST['login-submit'])){
+  if(isset($_POST['login-submit']) || isset($_POST['auth-submit'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
 

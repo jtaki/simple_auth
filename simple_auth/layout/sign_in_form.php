@@ -28,5 +28,14 @@
       <input type="submit" name='login-submit' value='Sign In'>
     </form>
 
-    <span><a href='simple_auth/registration.php'>or Register Now</a></span>
+    <!-- register link as form instead of link to persist post vars -->
+    <form action="<?= CONFIG['registration_path'] ?>" method="post">
+    <?php foreach($_POST as $k => $v) {?>
+      <?php if($k === "password" || $k === "email") { continue; } ?>
+      <?= $k ?>
+        <input type="hidden" name="<?= $k ?>" value="<?= $v ?>">
+      <?php } ?>
+      <input type="submit" value="Signup New User">
+    </form>
+
   </div>

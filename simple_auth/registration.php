@@ -10,7 +10,11 @@
 
     if($registration->successful())
     {
-      header('Location:' . "../index.php");
+      // thank you for sigining up, continue to invoice
+      echo "<div class='alert alert-primary'>Thanks for signing up</div>";
+      include('layout/registration_success_form.php');
+      // do not render form
+      die();
       // print_r($_POST);
     }
     else

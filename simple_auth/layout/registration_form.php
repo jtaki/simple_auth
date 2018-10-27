@@ -1,4 +1,6 @@
 <?php
+  print_r($_POST);
+
   // if registratino service returns successful, redirect to invoice
   $email_err = (isset($errors['duplicate_user'])) ? $errors['duplicate_user'] : NULL;
   $pass_err  = (isset($errors['password_nomatch'])) ? $errors['password_nomatch'] : NULL;
@@ -41,7 +43,16 @@
           <?= $pass_err ?>
         </div>
       </div>
-
+      <?php foreach($_POST as $k => $v) {?>
+      <?php if(
+        $k === "password" ||
+        $k === "email" ||
+        $k === "password-confirmation" ||
+        $k === "login-submit"
+        ) { continue; } ?>
+      <?= $k ?>
+        <input type="hidden" name="<?= $k ?>" value="<?= $v ?>">
+      <?php } ?>
       <input type="submit" name='register-submit' value='Create Account'>
     </form>
 

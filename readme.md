@@ -23,3 +23,14 @@ Checks to see if credentials are valid or not
   with error message
 
 ## RegistrationService
+
+
+# TODO
+1. need to hash password for save into DB.
+2. password gets passed to post vars in locked down page.
+  1. is this even a problem?
+3. Add personalization ability to registration / reg success
+4. On failed auth then registration, submit post is not getting filtered out
+  1. if form-submit, filter out.
+  2. rename all submits to form-submit
+5. Doesn't sound like registration is actually writing to json
