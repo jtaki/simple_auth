@@ -38,7 +38,7 @@
         <label>Password</label>
         <input
           class="form-control"
-          type="text"
+          type="password"
           name="password"
           required
         />
@@ -49,7 +49,7 @@
         <label>Password Confirmation</label>
         <input
           class="form-control <?= ($pass_err) ? 'is-invalid' : ''; ?>"
-          type="text"
+          type="password"
           name="password-confirmation"
           required
         />
