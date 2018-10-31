@@ -38,3 +38,4 @@ Checks to see if credentials are valid or not
 - [x] Doesn't sound like registration is actually writing to json
 - [ ] Email format validation
 - [ ] change password to password field
+- [ ] if user refreshes at registration success page, they should somehow go to login vs back to registration?

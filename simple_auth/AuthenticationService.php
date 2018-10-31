@@ -81,5 +81,23 @@ class AuthenticationService
     }
   }
 
+  public function get_user_name() {
+    if (file_exists(CONFIG['users_file_path']))
+    {
+      $fp = fopen(CONFIG['users_file_path'], "r") or die("unable to open file");
+      $contents = fread($fp, filesize(CONFIG['users_file_path']));
+      $users = json_decode($contents, true)['users'];
+
+      foreach($users as $key => $attributes)
+      {
+        if($attributes['email'] == $this->email)
+        {
+          return $attributes['fname'];
+        }
+      }
+      fclose($fp);
+    }
+  }
+
 }
 ?>

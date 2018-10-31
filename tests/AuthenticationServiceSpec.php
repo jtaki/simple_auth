@@ -27,3 +27,7 @@ assert($auth->user_exists());
 // password provided should match password at user key
 $user_key = $auth->get_user_key();
 assert($auth->validate_password($user_key));
+
+// on login, should be able to get a users name
+$test = $auth->get_user_name();
+assert($test == 'admin');

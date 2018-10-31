@@ -13,7 +13,8 @@
 
     if($auth->is_authenticated())
     {
-      echo "<div class='alert alert-primary'>Authentication successful</div>";
+      $auth_fname = $auth->get_user_name();
+      echo "<div class='alert alert-primary'>Authentication successful. Welcome " . ucfirst($auth_fname) . "</div>";
       // render the rest of the page
     } else {
 

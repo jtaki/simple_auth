@@ -8,6 +8,7 @@
 <div class='container'>
     <h3>Register New User</h3>
     <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
+
       <div class="form-group">
         <label>First Name</label>
         <input
