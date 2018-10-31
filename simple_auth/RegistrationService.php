@@ -11,7 +11,7 @@ class RegistrationService {
   public function __construct($fname, $email, $password, $password_confirmation)
   {
     $this->fname = $fname;
-    $this->email = $email;
+    $this->email = strtolower($email);
     $this->password = $password;
     $this->password_confirmation = $password_confirmation;
     $this->errors = $this->registration_validation();

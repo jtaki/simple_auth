@@ -9,7 +9,7 @@ class AuthenticationService
 
   public function __construct($email, $password)
   {
-    $this->email = $email;
+    $this->email = strtolower($email);
     $this->password = $password;
   }
 

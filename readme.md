@@ -14,6 +14,10 @@ pop this bad boy right at the top of the page you want to lock down.
 - make sure users.json is writeable
   `$ chmod -R 777 simple_auth/users.json`
 
+
+## Services
+All data handling and validation is handled through either AuthenticationService or RegistrationService
+
 ## AuthenticationService
 Checks to see if credentials are valid or not
 - IF VALID:
@@ -37,3 +41,5 @@ Checks to see if credentials are valid or not
 - [x] change password to password field
 - [ ] if user refreshes at registration success page, they should somehow go to login vs back to registration?
 - [ ] password minimum length of 8 characters
+- [ ] email stored and checked as all lowercase
+- [ ] clear for reflected xss
