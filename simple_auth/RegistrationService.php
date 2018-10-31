@@ -1,5 +1,5 @@
 <?php
-define('CONFIG',require(__DIR__ . '/' . 'config.php'));
+define('SACONFIG',require(__DIR__ . '/' . 'config.php'));
 
 class RegistrationService {
   private $fname;
@@ -27,7 +27,7 @@ class RegistrationService {
     if(!$this->valid_email())
     { $errors['email_format'] = 'Not a valid Email. '; }
     if(!$this->password_length_valid())
-    { $errors['pass_length'] = "Password should be between " . CONFIG['min_pass_length'] . " and " . CONFIG['max_pass_length'] . " characters please! "; }
+    { $errors['pass_length'] = "Password should be between " . SACONFIG['min_pass_length'] . " and " . SACONFIG['max_pass_length'] . " characters please! "; }
 
     return $errors;
   }
@@ -75,8 +75,8 @@ class RegistrationService {
   {
     $pass_length = strlen($this->password);
     return (
-      $pass_length >= CONFIG['min_pass_length'] &&
-      $pass_length <=  CONFIG['max_pass_length']
+      $pass_length >= SACONFIG['min_pass_length'] &&
+      $pass_length <=  SACONFIG['max_pass_length']
       )
     ? true
     : false;

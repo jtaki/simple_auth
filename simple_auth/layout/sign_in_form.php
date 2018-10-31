@@ -30,7 +30,7 @@
     </form>
 
     <!-- register link as form instead of link to persist post vars -->
-    <form action="<?= CONFIG['registration_path'] ?>" method="post">
+    <form action="<?= SACONFIG['registration_path'] ?>" method="post">
     <?php foreach($_POST as $k => $v) {?>
       <?php if(
         $k === "password" ||

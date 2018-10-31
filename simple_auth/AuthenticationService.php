@@ -1,6 +1,6 @@
 <?php
 
-define('CONFIG',require(__DIR__ . '/' . 'config.php'));
+define('SACONFIG',require(__DIR__ . '/' . 'config.php'));
 // checks to see if provided username exists, then checks for matching password hash
 class AuthenticationService
 { // refer to provided email & provided password
@@ -34,10 +34,10 @@ class AuthenticationService
   }
 
   public function login($username, $password) {
-    if (file_exists(CONFIG['users_file_path']))
+    if (file_exists(SACONFIG['users_file_path']))
     {
-      $fp = fopen(CONFIG['users_file_path'], "r") or die("unable to open file");
-      $contents = fread($fp, filesize(CONFIG['users_file_path']));
+      $fp = fopen(SACONFIG['users_file_path'], "r") or die("unable to open file");
+      $contents = fread($fp, filesize(SACONFIG['users_file_path']));
       $users = json_decode($contents, true)['users'];
 
       if($users[$username]['password'] == $this->password)
@@ -51,10 +51,10 @@ class AuthenticationService
 
 
   public function get_user_key() {
-    if (file_exists(CONFIG['users_file_path']))
+    if (file_exists(SACONFIG['users_file_path']))
     {
-      $fp = fopen(CONFIG['users_file_path'], "r") or die("unable to open file");
-      $contents = fread($fp, filesize(CONFIG['users_file_path']));
+      $fp = fopen(SACONFIG['users_file_path'], "r") or die("unable to open file");
+      $contents = fread($fp, filesize(SACONFIG['users_file_path']));
       $users = json_decode($contents, true)['users'];
 
       foreach($users as $key => $attributes)
@@ -69,10 +69,10 @@ class AuthenticationService
   }
 
   public function validate_password($user_key) {
-    if (file_exists(CONFIG['users_file_path']))
+    if (file_exists(SACONFIG['users_file_path']))
     {
-      $fp = fopen(CONFIG['users_file_path'], "r") or die("unable to open file");
-      $contents = fread($fp, filesize(CONFIG['users_file_path']));
+      $fp = fopen(SACONFIG['users_file_path'], "r") or die("unable to open file");
+      $contents = fread($fp, filesize(SACONFIG['users_file_path']));
       $users = json_decode($contents, true)['users'];
 
       $pass_hash = $users[$user_key]['password'];
@@ -83,10 +83,10 @@ class AuthenticationService
   }
 
   public function get_user_name() {
-    if (file_exists(CONFIG['users_file_path']))
+    if (file_exists(SACONFIG['users_file_path']))
     {
-      $fp = fopen(CONFIG['users_file_path'], "r") or die("unable to open file");
-      $contents = fread($fp, filesize(CONFIG['users_file_path']));
+      $fp = fopen(SACONFIG['users_file_path'], "r") or die("unable to open file");
+      $contents = fread($fp, filesize(SACONFIG['users_file_path']));
       $users = json_decode($contents, true)['users'];
 
       foreach($users as $key => $attributes)

@@ -1,6 +1,6 @@
 <!-- <pre><? print_r($_POST); ?></pre> -->
 
-<form action="<?= CONFIG['post_registration_path'] ?>" method="post">
+<form action="<?= SACONFIG['post_registration_path'] ?>" method="post">
   <?php foreach($_POST as $k => $v) {?>
   <?php if(
     $k === "login-submit" ||
