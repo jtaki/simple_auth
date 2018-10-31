@@ -21,9 +21,11 @@ class RegistrationService {
   {
     $errors = [];
     if($this->duplicate_user())
-    { $errors['duplicate_user'] = 'email already registered'; }
+    { $errors['duplicate_user'] = 'Email already registered.'; }
     if(!$this->passwords_match())
-    { $errors['password_nomatch'] = 'passwords do not match'; }
+    { $errors['password_nomatch'] = 'Passwords do not match.'; }
+    if(!$this->valid_email())
+    { $errors['email_format'] = 'Not a valid Email.'; }
 
     return $errors;
   }
@@ -63,6 +65,13 @@ class RegistrationService {
   public function passwords_match()
   {
     return ($this->password === $this->password_confirmation)
+    ? true
+    : false;
+  }
+
+  public function valid_email()
+  {
+    return (filter_var($this->email, FILTER_VALIDATE_EMAIL))
     ? true
     : false;
   }

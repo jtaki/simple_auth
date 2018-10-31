@@ -4,6 +4,7 @@
   // if registratino service returns successful, redirect to invoice
   $email_err = (isset($errors['duplicate_user'])) ? $errors['duplicate_user'] : NULL;
   $pass_err  = (isset($errors['password_nomatch'])) ? $errors['password_nomatch'] : NULL;
+  $email_inv = (isset($errors['email_format'])) ? $errors['email_format'] : NULL;
 ?>
 <div class='container'>
     <h3>Register New User</h3>
@@ -23,13 +24,14 @@
       <div class="form-group">
         <label>Email</label>
         <input
-          class="form-control <?= ($email_err) ? 'is-invalid' : ''; ?>"
+          class="form-control <?= ($email_err || $email_inv) ? 'is-invalid' : ''; ?>"
           type="text"
           name="email"
           required
         />
         <div class="invalid-feedback">
-          <?= $email_err ?>
+          <?= $email_err ?>&nbsp;
+          <?= $email_inv ?>
         </div>
       </div>
       <div class="form-group">

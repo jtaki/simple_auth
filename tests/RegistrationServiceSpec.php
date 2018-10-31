@@ -25,5 +25,20 @@ assert(empty($test));
 $test = $reg->successful();
 assert($test);
 
+// user email should get validated as correct format
+$test = $reg->valid_email();
+assert($test);
+
 // write new user to file
-$reg->register_user();
+// $reg->register_user();
+
+// error checking
+$fname = 'testadmin';
+$e = 'admin3example.com';
+$p = 'asdf1234';
+$pc = 'asdf1234';
+
+$reg = new RegistrationService($fname, $e, $p, $pc);
+
+$test = $reg->get_errors();
+assert(array_key_exists('email_format', $test));
