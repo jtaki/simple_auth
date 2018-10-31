@@ -27,11 +27,8 @@ Checks to see if credentials are valid or not
 
 # TODO
 1. need to hash password for save into DB.
-2. password gets passed to post vars in locked down page.
-  1. is this even a problem?
-3. Add personalization ability to registration / reg success
-  1. get username and pass through post vars
-  2. add firstname to registration
+2. Add personalization ability to registration / reg success
+  - [x] add firstname to registration
 4. On failed auth then registration, submit post is not getting filtered out
   - [x] if form-submit, filter out.
   2. rename all submits to form-submit
