@@ -21,11 +21,13 @@ class RegistrationService {
   {
     $errors = [];
     if($this->duplicate_user())
-    { $errors['duplicate_user'] = 'Email already registered.'; }
+    { $errors['duplicate_user'] = 'Email already registered. '; }
     if(!$this->passwords_match())
-    { $errors['password_nomatch'] = 'Passwords do not match.'; }
+    { $errors['password_nomatch'] = 'Passwords do not match. '; }
     if(!$this->valid_email())
-    { $errors['email_format'] = 'Not a valid Email.'; }
+    { $errors['email_format'] = 'Not a valid Email. '; }
+    if(!$this->password_length_valid())
+    { $errors['pass_length'] = "Password should be between " . CONFIG['min_pass_length'] . " and " . CONFIG['max_pass_length'] . " characters please! "; }
 
     return $errors;
   }
@@ -65,6 +67,17 @@ class RegistrationService {
   public function passwords_match()
   {
     return ($this->password === $this->password_confirmation)
+    ? true
+    : false;
+  }
+
+  public function password_length_valid()
+  {
+    $pass_length = strlen($this->password);
+    return (
+      $pass_length >= CONFIG['min_pass_length'] &&
+      $pass_length <=  CONFIG['max_pass_length']
+      )
     ? true
     : false;
   }

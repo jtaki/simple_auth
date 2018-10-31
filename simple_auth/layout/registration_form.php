@@ -5,6 +5,7 @@
   $email_err = (isset($errors['duplicate_user'])) ? $errors['duplicate_user'] : NULL;
   $pass_err  = (isset($errors['password_nomatch'])) ? $errors['password_nomatch'] : NULL;
   $email_inv = (isset($errors['email_format'])) ? $errors['email_format'] : NULL;
+  $pass_length_err = (isset($errors['pass_length'])) ? $errors['pass_length'] : NULL;
 ?>
 <div class='container'>
     <h3>Register New User</h3>
@@ -48,13 +49,14 @@
       <div class="form-group">
         <label>Password Confirmation</label>
         <input
-          class="form-control <?= ($pass_err) ? 'is-invalid' : ''; ?>"
+          class="form-control <?= ($pass_err || $pass_length_err) ? 'is-invalid' : ''; ?>"
           type="password"
           name="password-confirmation"
           required
         />
         <div class="invalid-feedback">
           <?= $pass_err ?>
+          <?= $pass_length_err ?>
         </div>
       </div>
       <?php foreach($_POST as $k => $v) {?>

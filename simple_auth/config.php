@@ -8,6 +8,6 @@ return array(
 
   'users_file_path' => 'simple_auth/users.json',
   
-  'min_pass_length' => 4,
+  'min_pass_length' => 8,
   'max_pass_length' => 10
 );

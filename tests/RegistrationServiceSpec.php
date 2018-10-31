@@ -35,10 +35,15 @@ assert($test);
 // error checking
 $fname = 'testadmin';
 $e = 'admin3example.com';
-$p = 'asdf1234';
-$pc = 'asdf1234';
+$p = 'asdf';
+$pc = 'asdfasdf';
 
 $reg = new RegistrationService($fname, $e, $p, $pc);
 
+// invalid user should have email format error
 $test = $reg->get_errors();
 assert(array_key_exists('email_format', $test));
+
+
+// invalid user should have password length error
+assert(array_key_exists('pass_length', $test));
