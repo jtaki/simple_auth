@@ -3,10 +3,11 @@
 
   if(isset($_POST['register-submit']))
   {
+    $fname = $_POST['fname'];
     $email = $_POST['email'];
     $pw = $_POST['password'];
     $pw_conf = $_POST['password-confirmation'];
-    $registration = new RegistrationService($email, $pw, $pw_conf);
+    $registration = new RegistrationService($fname, $email, $pw, $pw_conf);
 
     if($registration->successful())
     {

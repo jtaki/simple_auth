@@ -9,6 +9,17 @@
     <h3>Register New User</h3>
     <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
       <div class="form-group">
+        <label>First Name</label>
+        <input
+          class="form-control"
+          type="text"
+          name="fname"
+          required
+        />
+
+      </div>
+
+      <div class="form-group">
         <label>Email</label>
         <input
           class="form-control <?= ($email_err) ? 'is-invalid' : ''; ?>"

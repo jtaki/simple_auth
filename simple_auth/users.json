@@ -1,8 +1,10 @@
 {
   "users": [{
+    "fname": "admin",
     "email": "admin@example.com",
     "password": "asdf1234"
   }, {
+    "fname": "admin",
     "email": "admin2@example.com",
     "password": "asdf12345"
   }]

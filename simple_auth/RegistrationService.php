@@ -2,7 +2,7 @@
 define('CONFIG',require(__DIR__ . '/' . 'config.php'));
 
 class RegistrationService {
-
+  private $fname;
   private $email;
   private $password;
   private $password_confirmation;
@@ -10,6 +10,7 @@ class RegistrationService {
 
   public function __construct($email, $password, $password_confirmation)
   {
+    $this->fname = $fname;
     $this->email = $email;
     $this->password = $password;
     $this->password_confirmation = $password_confirmation;
