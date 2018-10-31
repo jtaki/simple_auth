@@ -19,5 +19,5 @@ assert(!$test);
 $test = $reg->successful();
 assert($test);
 
-// write new user to fule
+// write new user to file
 $reg->register_user();

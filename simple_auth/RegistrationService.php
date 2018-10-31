@@ -32,6 +32,8 @@ class RegistrationService {
     {
       $this->register_user();
       return true;
+    } else {
+      return false;
     }
   }
 

@@ -32,7 +32,12 @@
     <!-- register link as form instead of link to persist post vars -->
     <form action="<?= CONFIG['registration_path'] ?>" method="post">
     <?php foreach($_POST as $k => $v) {?>
-      <?php if($k === "password" || $k === "email") { continue; } ?>
+      <?php if(
+        $k === "password" ||
+        $k === "email" ||
+        $k === "auth-submit" ||
+        $k === "register-submit"
+        ) { continue; } ?>
         <input type="hidden" name="<?= $k ?>" value="<?= $v ?>">
       <?php } ?>
       <input type="submit" value="Signup New User">

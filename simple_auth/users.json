@@ -1,13 +1,9 @@
 {
-  "users":
-  [
-    {
-      "email": "admin@example.com",
-      "password": "asdf1234"
-    },
-    {
-      "email": "admin2@example.com",
-      "password": "asdf12345"
-    }
-  ]
+  "users": [{
+    "email": "admin@example.com",
+    "password": "asdf1234"
+  }, {
+    "email": "admin2@example.com",
+    "password": "asdf12345"
+  }]
 }
