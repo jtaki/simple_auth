@@ -30,17 +30,17 @@ Checks to see if credentials are valid or not
 
 
 # TODO
-1. need to hash password for save into DB.
-2. Add personalization ability to registration / reg success
+- [x]need to hash password for save into DB.
+- [x]Add personalization ability to registration / reg success
   - [x] add firstname to registration
-4. On failed auth then registration, submit post is not getting filtered out
+1. On failed auth then registration, submit post is not getting filtered out
   - [x] if form-submit, filter out.
   2. rename all submits to form-submit
 - [x] Doesn't sound like registration is actually writing to json
 - [x] Email format validation
 - [x] change password to password field
 - [ ] if user refreshes at registration success page, they should somehow go to login vs back to registration?
-- [ ] password minimum length of 8 characters
+- [x] password minimum length of 8 characters
 - [x] email stored and checked as all lowercase
 - [ ] clear for reflected xss
 - [ ] Remove all debugging output

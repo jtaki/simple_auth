@@ -3,8 +3,8 @@
 
   if(isset($_POST['register-submit']))
   {
-    $fname = $_POST['fname'];
-    $email = $_POST['email'];
+    $fname = htmlspecialchars($_POST['fname']);
+    $email = htmlspecialchars($_POST['email']);
     $pw = $_POST['password'];
     $pw_conf = $_POST['password-confirmation'];
     $registration = new RegistrationService($fname, $email, $pw, $pw_conf);
