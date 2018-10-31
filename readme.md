@@ -33,6 +33,6 @@ Checks to see if credentials are valid or not
   - [x] if form-submit, filter out.
   2. rename all submits to form-submit
 - [x] Doesn't sound like registration is actually writing to json
-- [ ] Email format validation
+- [x] Email format validation
 - [ ] change password to password field
 - [ ] if user refreshes at registration success page, they should somehow go to login vs back to registration?
