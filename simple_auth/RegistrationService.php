@@ -8,7 +8,7 @@ class RegistrationService {
   private $password_confirmation;
   private $errors = Array();
 
-  public function __construct($email, $password, $password_confirmation)
+  public function __construct($fname, $email, $password, $password_confirmation)
   {
     $this->fname = $fname;
     $this->email = $email;
@@ -75,6 +75,7 @@ class RegistrationService {
   public function register_user() {
     $user_file = 'users.json';
     $user = [
+      'fname' => $this->fname,
       'email' => $this->email,
       'password' => $this->password
     ];
