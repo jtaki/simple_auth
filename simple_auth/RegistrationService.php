@@ -30,7 +30,7 @@ class RegistrationService {
   {
     if(empty($this->errors) && $this->passwords_match())
     {
-      $this->register_user();
+      // $this->register_user();
       return true;
     } else {
       return false;
@@ -70,18 +70,20 @@ class RegistrationService {
   }
 
   public function register_user() {
+    $user_file = 'users.json';
     $user = [
       'email' => $this->email,
       'password' => $this->password
     ];
+    echo file_exists($user_file) ? 'yes' : 'no';
 
-    if (file_exists(CONFIG['users_file_path']))
+    if (file_exists($user_file))
     {
-      $contents = file_get_contents(CONFIG['users_file_path']);
+      $contents = file_get_contents($user_file);
       $data = json_decode($contents, true);
       array_push($data['users'], $user);
       $json = json_encode($data);
-      file_put_contents(CONFIG['users_file_path'], $json);
+      file_put_contents($user_file, $json);
     }
   }
 }

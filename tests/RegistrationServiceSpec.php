@@ -15,9 +15,15 @@ assert($test);
 $test = $reg->duplicate_user();
 assert(!$test);
 
+// user registration should have an errors array
+$test = $reg->get_errors();
+assert(is_array($test));
+assert(empty($test));
+
 // assuming last 2 tests true, reg should be successful
 $test = $reg->successful();
 assert($test);
+
 
 // write new user to file
 $reg->register_user();
