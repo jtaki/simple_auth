@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
 <div class='container'>
     <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
       <div class="form-group">
@@ -21,7 +23,6 @@
       <!-- hidden input to carry post vars from index -->
       <?php foreach($_POST as $k => $v) {?>
       <?php if($k === "password" || $k === "email") { continue; } ?>
-      <?= $k ?>
         <input type="hidden" name="<?= $k ?>" value="<?= $v ?>">
       <?php } ?>
 
@@ -32,7 +33,6 @@
     <form action="<?= CONFIG['registration_path'] ?>" method="post">
     <?php foreach($_POST as $k => $v) {?>
       <?php if($k === "password" || $k === "email") { continue; } ?>
-      <?= $k ?>
         <input type="hidden" name="<?= $k ?>" value="<?= $v ?>">
       <?php } ?>
       <input type="submit" value="Signup New User">
