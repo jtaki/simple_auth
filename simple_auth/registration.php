@@ -11,7 +11,7 @@
 
     if($registration->successful())
     {
-      print_r($registration);
+      // print_r($registration);
       $registration->register_user();
       // thank you for sigining up, continue to invoice
       echo "<div class='alert alert-primary'>Hey " . ucfirst($fname) . " Thanks for signing up</div>";

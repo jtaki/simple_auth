@@ -1,6 +1,6 @@
 <?php
   require('simple_auth/AuthenticationService.php');
-  print_r($_POST);
+  // print_r($_POST);
   // authentication service will check to see if user session exists
  // if login form submitted
  // pull vars

@@ -66,7 +66,7 @@
         $k === "password-confirmation" ||
         $k === "login-submit"
         ) { continue; } ?>
-      <?= $k ?>
+      <!-- <?= $k ?> -->
         <input type="hidden" name="<?= $k ?>" value="<?= $v ?>">
       <?php } ?>
       <input type="submit" name='register-submit' value='Create Account'>

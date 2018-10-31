@@ -42,5 +42,5 @@ Checks to see if credentials are valid or not
 - [ ] if user refreshes at registration success page, they should somehow go to login vs back to registration?
 - [x] password minimum length of 8 characters
 - [x] email stored and checked as all lowercase
-- [ ] clear for reflected xss
+- [x] clear for reflected xss getting saved to db
 - [ ] Remove all debugging output
