@@ -26,6 +26,7 @@
     }
 
   } else { // if login form was not submitted, then render the login form
+    echo "<div class='alert alert-primary'>Please Sign in to continue</div>";
     include('simple_auth/layout/sign_in_form.php');
     exit();
   }

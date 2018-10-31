@@ -6,6 +6,8 @@ Sometimes you simply want to lock up a page for registered users only. The goal 
 - Session Authentication
 
 ## How to use
+first clone the simple_auth folder into the root of your project.
+
 pop this bad boy right at the top of the page you want to lock down.
 `<?php include('simple_auth/simple_auth.php') ?>`
 
@@ -44,3 +46,4 @@ Checks to see if credentials are valid or not
 - [x] email stored and checked as all lowercase
 - [x] clear for reflected xss getting saved to db
 - [ ] Remove all debugging output
+- [ ] Add please log in message to top of simple auth

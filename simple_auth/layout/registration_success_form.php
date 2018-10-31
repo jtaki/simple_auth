@@ -1,4 +1,4 @@
-<pre><? print_r($_POST); ?></pre>
+<!-- <pre><? print_r($_POST); ?></pre> -->
 
 <form action="<?= CONFIG['post_registration_path'] ?>" method="post">
   <?php foreach($_POST as $k => $v) {?>

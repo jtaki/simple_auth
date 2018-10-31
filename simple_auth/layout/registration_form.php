@@ -1,5 +1,5 @@
 <?php
-  print_r($_POST);
+  // print_r($_POST);
 
   // if registratino service returns successful, redirect to invoice
   $email_err = (isset($errors['duplicate_user'])) ? $errors['duplicate_user'] : NULL;
