@@ -30,7 +30,9 @@ Checks to see if credentials are valid or not
 2. password gets passed to post vars in locked down page.
   1. is this even a problem?
 3. Add personalization ability to registration / reg success
+  1. get username and pass through post vars
+  2. add firstname to registration
 4. On failed auth then registration, submit post is not getting filtered out
-  1. if form-submit, filter out.
+  - [x] if form-submit, filter out.
   2. rename all submits to form-submit
-5. Doesn't sound like registration is actually writing to json
+- [x] Doesn't sound like registration is actually writing to json
