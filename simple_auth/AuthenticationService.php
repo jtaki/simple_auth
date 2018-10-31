@@ -75,7 +75,8 @@ class AuthenticationService
       $contents = fread($fp, filesize(CONFIG['users_file_path']));
       $users = json_decode($contents, true)['users'];
 
-      return ($users[$user_key]['password'] === $this->password) ? true : false;
+      $pass_hash = $users[$user_key]['password'];
+      return (password_verify($this->password, $pass_hash)) ? true : false;
 
       fclose($fp);
     }

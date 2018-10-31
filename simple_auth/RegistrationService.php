@@ -87,10 +87,10 @@ class RegistrationService {
       $user = [
         'fname' => $this->fname,
         'email' => $this->email,
-        'password' => $this->password
+        'password' => password_hash($this->password, PASSWORD_DEFAULT)
       ];
       // echo file_exists($user_file) ? 'yes' : 'no';
-  
+
       if (file_exists($user_file))
       {
         $contents = file_get_contents($user_file);

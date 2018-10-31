@@ -36,3 +36,4 @@ Checks to see if credentials are valid or not
 - [x] Email format validation
 - [x] change password to password field
 - [ ] if user refreshes at registration success page, they should somehow go to login vs back to registration?
+- [ ] password minimum length of 8 characters
