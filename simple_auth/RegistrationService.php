@@ -1,7 +1,8 @@
 <?php
-define('CONFIG',require('config.php'));
+define('CONFIG',require(__DIR__ . '/' . 'config.php'));
 
 class RegistrationService {
+
   private $email;
   private $password;
   private $password_confirmation;
@@ -39,10 +40,11 @@ class RegistrationService {
 
   public function duplicate_user()
   {
-    if (file_exists(CONFIG['users_file_path']))
+    $user_file = 'users.json';
+    if (file_exists($user_file))
     {
-      $fp = fopen(CONFIG['users_file_path'], "r") or die("unable to open file");
-      $contents = fread($fp, filesize(CONFIG['users_file_path']));
+      $fp = fopen($user_file, "r") or die("unable to open file");
+      $contents = fread($fp, filesize($user_file));
       $users = json_decode($contents, true)['users'];
 
       foreach($users as $key => $attributes)
@@ -75,7 +77,7 @@ class RegistrationService {
       'email' => $this->email,
       'password' => $this->password
     ];
-    echo file_exists($user_file) ? 'yes' : 'no';
+    // echo file_exists($user_file) ? 'yes' : 'no';
 
     if (file_exists($user_file))
     {

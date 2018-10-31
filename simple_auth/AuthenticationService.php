@@ -1,6 +1,6 @@
 <?php
 
-define('CONFIG',require('simple_auth/config.php'));
+define('CONFIG',require(__DIR__ . '/' . 'config.php'));
 // checks to see if provided username exists, then checks for matching password hash
 class AuthenticationService
 { // refer to provided email & provided password
