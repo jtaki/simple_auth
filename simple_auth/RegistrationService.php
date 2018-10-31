@@ -73,21 +73,23 @@ class RegistrationService {
   }
 
   public function register_user() {
-    $user_file = 'users.json';
-    $user = [
-      'fname' => $this->fname,
-      'email' => $this->email,
-      'password' => $this->password
-    ];
-    // echo file_exists($user_file) ? 'yes' : 'no';
-
-    if (file_exists($user_file))
-    {
-      $contents = file_get_contents($user_file);
-      $data = json_decode($contents, true);
-      array_push($data['users'], $user);
-      $json = json_encode($data);
-      file_put_contents($user_file, $json);
+    if(!$this->duplicate_user()) {
+      $user_file = 'users.json';
+      $user = [
+        'fname' => $this->fname,
+        'email' => $this->email,
+        'password' => $this->password
+      ];
+      // echo file_exists($user_file) ? 'yes' : 'no';
+  
+      if (file_exists($user_file))
+      {
+        $contents = file_get_contents($user_file);
+        $data = json_decode($contents, true);
+        array_push($data['users'], $user);
+        $json = json_encode($data);
+        file_put_contents($user_file, $json);
+      }
     }
   }
 }
