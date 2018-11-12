@@ -14,6 +14,13 @@
     if($auth->is_authenticated())
     {
       $auth_fname = $auth->get_user_name();
+      if (!isset($_SESSION))
+      {
+        session_start();
+        $_SESSION['auth'] = true;
+        $_SESSION['user'] = $auth_fname;
+      }
+
       echo "<div class='alert alert-primary'>Authentication successful. Welcome " . ucfirst($auth_fname) . "</div>";
       // render the rest of the page
     } else {

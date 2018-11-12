@@ -13,6 +13,13 @@
 <body>
   Some hidden stuff
 
+  <pre><?= var_dump($_SESSION) ?></pre>
   <!-- <pre><? print_r($_POST); ?></pre> -->
+  <a
+    href="simple_auth/actions/logout.php"
+    class="btn btn-danger"
+  >
+    Log out
+  </a>
 </body>
 </html>
