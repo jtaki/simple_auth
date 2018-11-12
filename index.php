@@ -1,3 +1,4 @@
+<? session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +16,6 @@
     </form>
    Form leading to locked down page
   </div>
-
+  <?= print_r($_SESSION) ?>
 </body>
 </html>

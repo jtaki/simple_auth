@@ -1,5 +1,6 @@
 <?php
   require_once('RegistrationService.php');
+  session_start();
 
   if(isset($_POST['register-submit']))
   {
@@ -13,6 +14,9 @@
     {
       // print_r($registration);
       $registration->register_user();
+
+      $_SESSION['auth'] = true;
+      $_SESSION['user'] = $fname;
       // thank you for sigining up, continue to invoice
       echo "<div class='alert alert-primary'>Hey " . ucfirst($fname) . " Thanks for signing up</div>";
       include('layout/registration_success_form.php');

@@ -1,5 +1,5 @@
 <?php
-
+  session_start();
   // destroy session
   if(isset($_SESSION['auth']))
   {

@@ -1,5 +1,7 @@
-<?php include('simple_auth/simple_auth.php') ?>
-
+<?php
+  session_start();
+  include('simple_auth/simple_auth.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
